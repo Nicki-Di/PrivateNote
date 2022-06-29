@@ -22,8 +22,11 @@ export default function Id() {
                 },
             })
                 .then(response => {
-                    console.log(response.data)
-                    setNote(response.data)
+                    if (response.data.startsWith("^")) {
+                        alert(response.data.split("^")[1])
+                    } else {
+                        setNote(response.data)
+                    }
                 })
                 .catch(error => {
                     console.log(error);

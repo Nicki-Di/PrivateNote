@@ -63,7 +63,7 @@ const getNote = (connection, id) => {
                 // expired
                 if (moment(result[0].date_expires).format('YYYY-MM-DD HH:mm:ss') < moment(new Date()).format('YYYY-MM-DD HH:mm:ss')) {
                     disableNote(connection, id).then(r => {
-                        return resolve("The note has been expired!")
+                        return resolve("^The note has been expired!")
                     }).catch(e => {
                         return reject(e)
                     })
@@ -75,7 +75,7 @@ const getNote = (connection, id) => {
                             return reject(e)
                         })
                     } else {
-                        return resolve("The note has been seen!");
+                        return resolve("^The note has been seen!");
                     }
                 }
 
