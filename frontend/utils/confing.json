@@ -1,0 +1,5 @@
+{
+  "baseURL": "http://localhost:",
+  "addNote": "/add-note",
+  "getNote": "/get-note"
+}
