@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: cc-frontend
+    depends_on:
+      - backend
+    build: ./frontend
+    ports:
+      - 3000:3000
+
+  backend:
+    container_name: cc-backend
+    depends_on:
+      - db
+    build: ./backend
+    ports:
+      - 5003:5003
+
+  db:
+    container_name: cc-db
+    build: ./db
+    ports:
+      - 3306:3306
+    volumes:
+      - cc-db-volume:/var/lib/mysq
+
+volumes:
+  cc-db-volume:
