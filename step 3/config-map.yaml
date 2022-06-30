@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  .env: |
+    WEATHER_API=http://api.weatherstack.com/current
+    ACCESS_KEY=db19c9cd3c9d3bbf83aba022d4c4c490
+    PORT=8085
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-04-03T07:11:32Z"
+  name: server-config
+  namespace: default
+  resourceVersion: "29857"
+  uid: 06b7e92f-f2cd-4394-85dc-87bf0e0e02d1
