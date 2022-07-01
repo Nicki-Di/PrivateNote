@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cc-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cc-db
+  strategy: { }
+  template:
+    metadata:
+      labels:
+        app: cc-db
+    spec:
+      containers:
+      - image: nickmurdock/cc-db:latest
+        name: cc-db
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: cc-db-secret
+              key: user
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cc-db-secret
+              key: password
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: cc-db-secret
+              key: MYSQL_DATABASE
+        ports:
+        - containerPort: 3306
+          name: cc-db
+        volumeMounts:
+        - name: cc-db-volume
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: cc-db-volume
+        persistentVolumeClaim:
+          claimName: cc-db-pv-claim
