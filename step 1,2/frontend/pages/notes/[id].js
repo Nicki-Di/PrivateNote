@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import ProceedContext from "/contexts/ProceedContext"
 import Note from "../../components/Note";
 import axios from "axios";
-import config from "../../utils/confing.json";
+import config from "../../confing.json";
 
 export default function Id() {
     const router = useRouter();
@@ -16,7 +16,7 @@ export default function Id() {
 
     useEffect(() => {
         if (proceed) {
-            axios.get(config.baseURL + config.getNote + `?id=${id}`, {
+            axios.get("http://" + process.env.NEXT_PUBLIC_BACKEND + ":" + process.env.NEXT_PUBLIC_PORT + config.getNote + `?id=${id}`, {
                 headers: {
                     "Content-Type": "application/json",
                 },

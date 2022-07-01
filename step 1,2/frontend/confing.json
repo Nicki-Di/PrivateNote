@@ -1,0 +1,4 @@
+{
+  "addNote": "/add-note",
+  "getNote": "/get-note"
+}

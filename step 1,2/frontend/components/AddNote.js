@@ -1,6 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
-import config from "/utils/confing.json";
+import config from "../confing.json";
 
 
 export default function AddNote() {
@@ -8,8 +8,8 @@ export default function AddNote() {
     const [link, setLink] = useState("")
     const submit = () => {
         if (note) {
-            console.log(config.baseURL + config.addNote)
-            axios.post(config.baseURL + config.addNote, {
+            console.log("http://" + process.env.NEXT_PUBLIC_BACKEND + ":" + process.env.NEXT_PUBLIC_PORT + config.addNote)
+            axios.post("http://" + process.env.NEXT_PUBLIC_BACKEND + ":" + process.env.NEXT_PUBLIC_PORT + config.addNote, {
                 "content": note,
             }, {
                 headers: {

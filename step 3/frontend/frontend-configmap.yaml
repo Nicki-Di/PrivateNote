@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  NEXT_PUBLIC_PORT: '32100'
+  NEXT_PUBLIC_BACKEND: '10.99.6.200'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-07-01T08:22:42Z"
+  name: cc-frontend-configmap
+  namespace: default
+  resourceVersion: "20628"
+  uid: 97feec46-39da-413d-9052-7c795b25d8be

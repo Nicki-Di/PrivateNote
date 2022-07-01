@@ -9,6 +9,7 @@ services:
     build:
       context: ./frontend
       target: dev 
+    image: cc-frontend
     ports:
       - 3000:3000
 
@@ -20,6 +21,7 @@ services:
     build:
       context: ./backend
       target: dev 
+    image: cc-backend
     ports:
       - 5003:5003
 
@@ -28,6 +30,7 @@ services:
     hostname: cc-db
     restart: always
     build: ./db
+    image: cc-db
     ports:
       - 3306:3306
     volumes:
