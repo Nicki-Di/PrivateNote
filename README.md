@@ -5,4 +5,4 @@ In this project, I've implemented a front-end landing to enter a note and save i
 - Written in [Next.js](https://nextjs.org/) and [Express.js](https://expressjs.com/) 🧑🏻‍💻
 - Styled with [TailwindCSS](https://tailwindcss.com/) 💄
 - Containerized with [Docker](https://www.docker.com/) 🐳
-- Load balanced with [Kubernetes](https://kubernetes.io/) and [minikube](https://minikube.sigs.k8s.io/docs/start/) ☸
+- Load balanced with [Kubernetes](https://kubernetes.io/) - [minikube](https://minikube.sigs.k8s.io/docs/start/) ☸
